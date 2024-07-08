@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
+    <script src="https://kit.fontawesome.com/a1bd5d6a81.js" crossorigin="anonymous"></script>
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Cosas para hacer:</h1>
+    <h3>Nueva tarea</h3>
+    <input id="nuevaTarea" placeholder="Nueva Tarea"/>
+    <button id="agregarTarea">Agregar</button>
+    <input id="buscarTarea" placeholder="Buscar tarea"/>
+    <button id="btnBuscarTarea">Buscar</button>
+    <div class="contenedorFlex">
+      <div class="contadores">
+        <span id="cuentaTareas">Total tareas: 0</span>
+        <span id="tareasRealizadas">Realizadas: 0 </span>
+      </div>
+      <div id="tareas">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tarea</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

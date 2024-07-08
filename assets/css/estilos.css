@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.contenedorFlex {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contadores {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contadores span {
+    margin-bottom: 10px;
+}
