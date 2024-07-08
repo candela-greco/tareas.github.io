@@ -5,24 +5,37 @@
         const btnBuscar = document.querySelector("#btnBuscarTarea");
         const cuentaTareas = document.querySelector("#cuentaTareas");
         const tareasRealizadas  = document.querySelector("#tareasRealizadas");
+        
+        function generarIdAleatorio() {
+            return Math.floor(Math.random() * 1000);
+        }
 
-        const tareas = [];
+       const tareas = [
+            { id: generarIdAleatorio(), tarea: 'Hacer la compra', realizada: false },
+            { id: generarIdAleatorio(), tarea: 'Llamar al doctor', realizada: false },
+            { id: generarIdAleatorio(), tarea: 'Estudiar para el examen', realizada: false }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderList(tareas);
+        });
+
         let idTareas = 0;
 
         btnAgregar.addEventListener("click", () => {
             const tarea = tareaInput.value;
-            const idAleatorio = Math.floor(Math.random() * 1000);
-            tareas.push({id: idAleatorio, tarea: tarea, realizada: false});
+            tareas.push({id: generarIdAleatorio(), tarea: tarea, realizada: false});
             tareaInput.value = "";
             renderList(tareas);
         });
 
-        function renderList(tareas){
+        function renderList(tareas) {
             let html = "";
             for (let tarea of tareas) {
+                const estiloRealizada = tarea.realizada ? 'tarea-realizada' : '';
                 html += `<tr>
                             <td>${tarea.id}</td>
-                            <td>${tarea.tarea}</td>
+                            <td class="${estiloRealizada}">${tarea.tarea}</td>
                             <td>
                                 <input type="checkbox" ${tarea.realizada ? "checked" : ""} onchange="toggleRealizada(${tarea.id}, this.checked)">
                                 <i onclick="borrar(${tarea.id})" class="fa-solid fa-x"></i>
@@ -39,9 +52,10 @@
             if (tarea) {
                 tarea.realizada = checked;
                 actualizarTareasRealizadas();
+                renderList(tareas); 
             }
         }
-
+        
         function actualizarTareasRealizadas() {
             const realizadas = tareas.filter(t => t.realizada).length;
             tareasRealizadas.textContent = `Realizadas: ${realizadas}`;

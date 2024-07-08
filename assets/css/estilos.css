@@ -17,11 +17,11 @@ body {
 
 table {
     width: 100%;
-    border-collapse: collapse;
 }
 
 table th, table td {
     padding: 12px;
+    padding-right: 120px;
     text-align: left;
 }
 
@@ -39,4 +39,7 @@ table th, table td {
 
 .contadores span {
     margin-bottom: 10px;
+}
+.tarea-realizada {
+    font-style: italic;
 }
