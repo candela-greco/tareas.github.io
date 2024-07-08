@@ -52,7 +52,7 @@
             if (tarea) {
                 tarea.realizada = checked;
                 actualizarTareasRealizadas();
-                renderList(tareas); 
+                renderList(tareas);
             }
         }
         
